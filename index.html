@@ -1,361 +1,882 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منتجات امين الساعدي للعناية - الفخامة في كل لمسة</title>
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>منتجات امين الساعدي للعناية</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Lalezar&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Lalezar&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         :root {
-            --bg-dark: #0a0e14;
-            --bg-card: rgba(20, 25, 35, 0.7);
-            --accent-gold: #f4c542;
-            --accent-green: #4ecca3;
-            --accent-emerald: #2ecc71;
-            --text-primary: #ffffff;
-            --text-secondary: #a0aec0;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f4c542 0%, #e59819 100%);
-            --gradient-3: linear-gradient(135deg, #4ecca3 0%, #2ecc71 100%);
-            --shadow-glow: 0 0 40px rgba(244, 197, 66, 0.3);
+            --bg: #070b11;
+            --card: rgba(18, 23, 33, 0.7);
+            --gold: #f4c542;
+            --green: #46d19a;
+            --white: #fff;
+            --text: #b8c0cc;
+
+            --gradient-gold:
+                linear-gradient(135deg, #f4c542 0%, #ffdd77 100%);
+
+            --gradient-green:
+                linear-gradient(135deg, #46d19a 0%, #2ecc71 100%);
         }
 
         body {
             font-family: 'Cairo', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-primary);
+            background: var(--bg);
+            color: white;
             overflow-x: hidden;
-            line-height: 1.7;
             position: relative;
         }
 
-        /* Animated Background */
         body::before {
-            content: '';
+            content: "";
             position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(244, 197, 66, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(78, 204, 163, 0.08) 0%, transparent 60%);
-            animation: backgroundShift 20s ease-in-out infinite;
-            pointer-events: none;
+            top: 0;
+            left: 0;
+
+            background:
+                radial-gradient(circle at top right,
+                    rgba(244, 197, 66, 0.15),
+                    transparent 30%),
+
+                radial-gradient(circle at bottom left,
+                    rgba(70, 209, 154, 0.12),
+                    transparent 35%);
+
+            z-index: -1;
         }
 
-        @keyframes backgroundShift {
-            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
-            50% { transform: scale(1.1) rotate(5deg); opacity: 1; }
-        }
+        /* HERO */
 
-        .particle {
-            position: fixed;
-            width: 4px;
-            height: 4px;
-            background: var(--accent-gold);
-            border-radius: 50%;
-            opacity: 0.4;
-            animation: float-particle 15s infinite ease-in-out;
-        }
-
-        @keyframes float-particle {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(100px, -100px); }
-            50% { transform: translate(-50px, -200px); }
-            75% { transform: translate(-100px, -100px); }
-        }
-
-        /* Hero Section */
         .hero {
             min-height: 100vh;
+            position: relative;
+
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 40px 20px;
-            position: relative;
+
             overflow: hidden;
+            padding: 40px 20px;
         }
 
-        .hero::before {
-            content: '';
+        .hero video {
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(244, 197, 66, 0.1) 0%, transparent 70%);
-            animation: rotate-slow 30s linear infinite;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.18;
         }
 
-        @keyframes rotate-slow {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom,
+                    rgba(7, 11, 17, 0.3),
+                    rgba(7, 11, 17, 0.95));
         }
 
         .hero-content {
-            max-width: 900px;
             position: relative;
             z-index: 2;
+            max-width: 900px;
         }
 
         .hero-badge {
             display: inline-block;
-            padding: 10px 25px;
-            background: rgba(244, 197, 66, 0.1);
-            border: 1px solid rgba(244, 197, 66, 0.3);
+            padding: 12px 28px;
             border-radius: 50px;
-            color: var(--accent-gold);
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 30px;
-            animation: fadeInDown 1s ease-out;
-            backdrop-filter: blur(10px);
+
+            background: rgba(255, 255, 255, 0.08);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.12);
+
+            backdrop-filter: blur(20px);
+
+            color: var(--gold);
+
+            margin-bottom: 25px;
+
+            font-weight: 700;
         }
 
         .hero-title {
             font-family: 'Lalezar', cursive;
-            font-size: clamp(2.5rem, 8vw, 5.5rem);
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-gold) 0%, #ffd700 50%, var(--accent-green) 100%);
+
+            font-size: clamp(3rem, 8vw, 6rem);
+
+            line-height: 1.2;
+
+            margin-bottom: 20px;
+
+            background:
+                linear-gradient(135deg,
+                    #fff 0%,
+                    #f4c542 40%,
+                    #46d19a 100%);
+
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 25px;
-            line-height: 1.2;
-            animation: fadeInUp 1s ease-out 0.2s backwards;
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            color: var(--text-secondary);
-            margin-bottom: 50px;
-            animation: fadeInUp 1s ease-out 0.4s backwards;
+            font-size: clamp(1.1rem, 3vw, 1.6rem);
+            color: var(--text);
+
+            margin-bottom: 40px;
         }
 
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 18px 45px;
-            background: var(--gradient-2);
-            color: var(--bg-dark);
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            padding: 16px 38px;
+            border-radius: 60px;
             text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            animation: fadeInUp 1s ease-out 0.6s backwards;
-            box-shadow: 0 10px 30px rgba(244, 197, 66, 0.3);
-            position: relative;
-            overflow: hidden;
+            font-weight: 800;
+            transition: .4s;
         }
 
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-btn.primary {
+            background: var(--gradient-gold);
+            color: #000;
+        }
 
-        /* Container & Products */
-        .container { max-width: 1400px; margin: 0 auto; padding: 80px 20px; position: relative; z-index: 1; }
-        .section-header { text-align: center; margin-bottom: 70px; }
-        .section-label { color: var(--accent-gold); font-size: 0.95rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; display: block; }
-        .section-title { font-family: 'Lalezar', cursive; font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 20px; color: #fff; }
-        
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .hero-btn.secondary {
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-5px);
+        }
+
+        /* CONTAINER */
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: auto;
+            padding: 100px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+
+            font-family: 'Lalezar';
+
+            font-size: clamp(2.5rem, 6vw, 4rem);
+
+            margin-bottom: 15px;
+        }
+
+        .section-desc {
+            text-align: center;
+            color: var(--text);
+            margin-bottom: 70px;
+        }
+
+        /* PRODUCTS */
+
+        .products-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 35px;
+        }
+
         .product-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            padding: 50px 40px;
-            position: relative;
-            transition: all 0.5s ease;
-        }
-        .product-card:hover { transform: translateY(-15px); border-color: rgba(244, 197, 66, 0.5); box-shadow: var(--shadow-glow); }
-
-        /* Delivery */
-        .delivery-section {
-            background: var(--bg-card);
-            border-radius: 25px;
-            padding: 60px 50px;
-            text-align: center;
-            margin: 80px 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Contact Section MODIFIED */
-        .contact-section {
-            background: linear-gradient(135deg, rgba(20, 25, 35, 0.9) 0%, rgba(10, 14, 20, 0.95) 100%);
-            backdrop-filter: blur(20px);
-            border: 2px solid rgba(244, 197, 66, 0.2);
-            border-radius: 30px;
-            padding: 80px 50px;
-            text-align: center;
             position: relative;
             overflow: hidden;
+
+            border-radius: 28px;
+
+            background: var(--card);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.08);
+
+            backdrop-filter: blur(20px);
+
+            transition: .5s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            border-color: rgba(244, 197, 66, 0.4);
+
+            box-shadow:
+                0 0 40px rgba(244, 197, 66, 0.18);
+        }
+
+        .product-image {
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .7s;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-content {
+            padding: 35px;
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .product-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .product-desc {
+            color: var(--text);
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .product-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 50px;
+
+            background: var(--gradient-gold);
+
+            color: black;
+            text-decoration: none;
+
+            font-weight: 800;
+
+            transition: .3s;
+        }
+
+        .product-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* FEATURES */
+
+        .features {
+            margin-top: 120px;
+
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 30px;
+        }
+
+        .feature-box {
+            padding: 40px 30px;
+            text-align: center;
+
+            border-radius: 25px;
+
+            background: var(--card);
+
+            backdrop-filter: blur(20px);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .feature-box i {
+            font-size: 3rem;
+            color: var(--green);
+            margin-bottom: 20px;
+        }
+
+        .feature-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .feature-box p {
+            color: var(--text);
+        }
+
+        /* CONTACT */
+
+        .contact {
+            margin-top: 130px;
+
+            background:
+                linear-gradient(135deg,
+                    rgba(18, 23, 33, 0.9),
+                    rgba(7, 11, 17, 0.98));
+
+            border-radius: 35px;
+
+            padding: 80px 40px;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-family: 'Lalezar';
+            font-size: 3.5rem;
+
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            text-align: center;
+            color: var(--text);
+
+            margin-bottom: 50px;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
             gap: 25px;
-            margin-top: 40px;
-            position: relative;
-            z-index: 1;
         }
 
         .contact-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            padding: 35px 25px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+
             overflow: hidden;
+
+            border-radius: 25px;
+
+            padding: 35px 25px;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            color: white;
+
+            background:
+                rgba(255, 255, 255, 0.05);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.08);
+
+            transition: .4s;
         }
 
-        /* Real Icons Style */
-        .contact-icon-real {
+        .contact-btn i {
             font-size: 3.5rem;
-            position: relative;
-            z-index: 2;
-            transition: all 0.4s ease;
-            color: #fff;
+            margin-bottom: 18px;
+            display: block;
         }
 
-        .contact-btn:hover .contact-icon-real {
-            transform: scale(1.2) rotate(8deg);
+        .contact-btn span {
+            display: block;
         }
 
-        /* Hover Backgrounds */
-        .contact-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%; left: 50%; width: 0; height: 0;
+        .contact-btn .label {
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-btn .info {
+            opacity: 0.8;
+        }
+
+        .whatsapp:hover {
+            background:
+                linear-gradient(135deg,
+                    #25D366,
+                    #128C7E);
+        }
+
+        .instagram:hover {
+            background:
+                linear-gradient(135deg,
+                    #E1306C,
+                    #833AB4);
+        }
+
+        .snapchat:hover {
+            background:
+                linear-gradient(135deg,
+                    #FFFC00,
+                    #FFC700);
+
+            color: black;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-10px);
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 100px;
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-logo {
+            font-family: 'Lalezar';
+            font-size: 2.5rem;
+            color: var(--gold);
+
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: var(--text);
+        }
+
+        /* FLOAT BTN */
+
+        .float-whatsapp {
+            position: fixed;
+
+            bottom: 25px;
+            left: 25px;
+
+            width: 65px;
+            height: 65px;
+
+            background: #25D366;
+
             border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s ease, height 0.6s ease;
-            z-index: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+
+            color: white;
+
+            font-size: 2rem;
+
+            z-index: 999;
+
+            box-shadow:
+                0 0 30px rgba(37, 211, 102, 0.5);
+
+            animation: pulse 2s infinite;
         }
 
-        .whatsapp-btn:hover::before { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); width: 500px; height: 500px; }
-        .instagram-btn:hover::before { background: linear-gradient(135deg, #E1306C 0%, #833AB4 100%); width: 500px; height: 500px; }
-        .snapchat-btn:hover::before { background: linear-gradient(135deg, #FFFC00 0%, #FFC700 100%); width: 500px; height: 500px; }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
 
-        .snapchat-btn:hover .contact-icon-real,
-        .snapchat-btn:hover .contact-label,
-        .snapchat-btn:hover .contact-info {
-            color: #000; /* تغيير اللون للأسود في سناب شات للوضوح */
+            50% {
+                transform: scale(1.08);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
-        .contact-label { font-size: 1.1rem; font-weight: 700; position: relative; z-index: 1; }
-        .contact-info { font-size: 0.95rem; opacity: 0.8; position: relative; z-index: 1; }
+        /* REVEAL */
 
-        footer { text-align: center; padding: 50px 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 80px; }
-        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: 1s;
+        }
 
-        @media (max-width: 768px) {
-            .contact-grid { grid-template-columns: 1fr; }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media(max-width:768px) {
+
+            .hero-btns {
+                flex-direction: column;
+            }
+
+            .hero-btn {
+                width: 100%;
+            }
+
+            .contact {
+                padding: 60px 25px;
+            }
+
+            .contact h2 {
+                font-size: 2.5rem;
+            }
+
         }
     </style>
 </head>
+
 <body>
 
+    <!-- HERO -->
+
     <section class="hero">
+
+        <video autoplay muted loop playsinline>
+            <source
+                src="https://cdn.coverr.co/videos/coverr-woman-applying-face-cream-1564387966762?download=1080p"
+                type="video/mp4">
+        </video>
+
+        <div class="hero-overlay"></div>
+
         <div class="hero-content">
-            <span class="hero-badge">✨ منتجات فاخرة للعناية</span>
-            <h1 class="hero-title">منتجات امين الساعدي للعناية</h1>
-            <p class="hero-subtitle">الفخامة في كل لمسة • الجودة في كل منتج</p>
-            <a href="#products" class="hero-cta">اكتشف منتجاتنا</a>
+
+            <span class="hero-badge">
+                ✨ منتجات فاخرة للعناية
+            </span>
+
+            <h1 class="hero-title">
+                منتجات امين الساعدي للعناية
+            </h1>
+
+            <p class="hero-subtitle">
+                الفخامة في كل لمسة • الجودة في كل منتج
+            </p>
+
+            <div class="hero-btns">
+
+                <a href="#products"
+                    class="hero-btn primary">
+                    اكتشف المنتجات
+                </a>
+
+                <a href="#contact"
+                    class="hero-btn secondary">
+                    تواصل معنا
+                </a>
+
+            </div>
+
         </div>
+
     </section>
 
+    <!-- PRODUCTS -->
+
     <div class="container" id="products">
-        <div class="section-header reveal">
-            <span class="section-label">المنتجات الفاخرة</span>
-            <h2 class="section-title">مجموعتنا المميزة</h2>
-        </div>
+
+        <h2 class="section-title reveal">
+            مجموعتنا الفاخرة
+        </h2>
+
+        <p class="section-desc reveal">
+            منتجات مختارة بعناية لتمنحك أفضل تجربة عناية بالبشرة والشعر
+        </p>
 
         <div class="products-grid">
+
+            <!-- PRODUCT -->
+
             <div class="product-card reveal">
-                <i class="fas fa-sparkles product-icon" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 20px; display: block;"></i>
-                <h3 class="product-title">عناية بالبشرة</h3>
-                <p>مجموعة متكاملة من منتجات العناية بالبشرة المصممة بأحدث التقنيات.</p>
+
+                <div class="product-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
+                </div>
+
+                <div class="product-content">
+
+                    <i class="fas fa-sparkles product-icon"></i>
+
+                    <h3 class="product-title">
+                        عناية بالبشرة
+                    </h3>
+
+                    <p class="product-desc">
+                        منتجات فاخرة تمنح البشرة النضارة والإشراق الطبيعي مع تركيبات حديثة عالية الجودة.
+                    </p>
+
+                    <a href="#contact"
+                        class="product-btn">
+                        اطلب الآن
+                    </a>
+
+                </div>
+
             </div>
+
+            <!-- PRODUCT -->
+
             <div class="product-card reveal">
-                <i class="fas fa-pump-soap product-icon" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 20px; display: block;"></i>
-                <h3 class="product-title">عناية بالشعر</h3>
-                <p>باكجات فاخرة تجمع بين الفعالية والجودة العالية لشعر صحي.</p>
+
+                <div class="product-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop">
+                </div>
+
+                <div class="product-content">
+
+                    <i class="fas fa-pump-soap product-icon"></i>
+
+                    <h3 class="product-title">
+                        عناية بالشعر
+                    </h3>
+
+                    <p class="product-desc">
+                        باكجات متطورة تمنح الشعر القوة واللمعان والحيوية بتركيبات احترافية.
+                    </p>
+
+                    <a href="#contact"
+                        class="product-btn">
+                        تسوق الآن
+                    </a>
+
+                </div>
+
             </div>
+
+            <!-- PRODUCT -->
+
+            <div class="product-card reveal">
+
+                <div class="product-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
+                </div>
+
+                <div class="product-content">
+
+                    <i class="fas fa-gem product-icon"></i>
+
+                    <h3 class="product-title">
+                        منتجات فاخرة
+                    </h3>
+
+                    <p class="product-desc">
+                        عناية متكاملة بلمسة فخمة وجودة عالية تناسب كل تفاصيل الجمال والأناقة.
+                    </p>
+
+                    <a href="#contact"
+                        class="product-btn">
+                        شاهد المزيد
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="delivery-section reveal">
-            <i class="fas fa-truck-fast" style="font-size: 3.5rem; color: var(--accent-green); margin-bottom: 20px; display: block;"></i>
-            <h3>خدمة التوصيل السريع</h3>
-            <p>توصيل آمن وسريع لجميع المحافظات العراقية.</p>
+        <!-- FEATURES -->
+
+        <div class="features">
+
+            <div class="feature-box reveal">
+                <i class="fas fa-truck-fast"></i>
+
+                <h3>توصيل سريع</h3>
+
+                <p>
+                    توصيل لجميع المحافظات العراقية بسرعة وأمان.
+                </p>
+            </div>
+
+            <div class="feature-box reveal">
+                <i class="fas fa-shield-heart"></i>
+
+                <h3>جودة عالية</h3>
+
+                <p>
+                    منتجات أصلية ومختبرة بعناية لضمان أفضل النتائج.
+                </p>
+            </div>
+
+            <div class="feature-box reveal">
+                <i class="fas fa-star"></i>
+
+                <h3>خدمة مميزة</h3>
+
+                <p>
+                    دعم سريع وتجربة شراء احترافية وفخمة.
+                </p>
+            </div>
+
         </div>
 
-        <div class="contact-section reveal">
-            <h2 class="contact-title" style="font-family: 'Lalezar'; font-size: 3rem; margin-bottom: 20px;">تواصل معنا الآن</h2>
-            
+        <!-- CONTACT -->
+
+        <div class="contact reveal" id="contact">
+
+            <h2>
+                تواصل معنا الآن
+            </h2>
+
+            <p>
+                متوفرون دائماً للطلبات والاستفسارات
+            </p>
+
             <div class="contact-grid">
-                <a href="https://wa.me/9647702014853" class="contact-btn whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp contact-icon-real"></i>
-                    <span class="contact-label">واتساب</span>
-                    <span class="contact-info">07702014853</span>
+
+                <!-- WHATS -->
+
+                <a href="https://wa.me/9647702014853"
+                    target="_blank"
+                    class="contact-btn whatsapp">
+
+                    <i class="fab fa-whatsapp"></i>
+
+                    <span class="label">
+                        واتساب
+                    </span>
+
+                    <span class="info">
+                        07702014853
+                    </span>
+
                 </a>
 
-                <a href="https://www.instagram.com/a9_nj?igsh=aXlvOGhsZnM1bXpx" class="contact-btn instagram-btn" target="_blank">
-                    <i class="fab fa-instagram contact-icon-real"></i>
-                    <span class="contact-label">إنستغرام</span>
-                    <span class="contact-info">@a9_nj</span>
+                <!-- INSTAGRAM -->
+
+                <a href="https://www.instagram.com/a9_nj"
+                    target="_blank"
+                    class="contact-btn instagram">
+
+                    <i class="fab fa-instagram"></i>
+
+                    <span class="label">
+                        إنستغرام
+                    </span>
+
+                    <span class="info">
+                        @a9_nj
+                    </span>
+
                 </a>
 
-                <a href="https://www.snapchat.com/add/a9_nj?share_id=hnCXOMd6ykA&locale=ar-EG" class="contact-btn snapchat-btn" target="_blank">
-                    <i class="fab fa-snapchat contact-icon-real"></i>
-                    <span class="contact-label">سناب شات</span>
-                    <span class="contact-info">a9_nj</span>
+                <!-- SNAP -->
+
+                <a href="https://www.snapchat.com/add/a9_nj"
+                    target="_blank"
+                    class="contact-btn snapchat">
+
+                    <i class="fab fa-snapchat"></i>
+
+                    <span class="label">
+                        سناب شات
+                    </span>
+
+                    <span class="info">
+                        a9_nj
+                    </span>
+
                 </a>
+
             </div>
+
         </div>
+
     </div>
 
+    <!-- FOOTER -->
+
     <footer>
-        <div class="footer-logo" style="font-family: 'Lalezar'; font-size: 2rem; color: var(--accent-gold);">امين الساعدي</div>
-        <p>© 2026 جميع الحقوق محفوظة</p>
+
+        <div class="footer-logo">
+            امين الساعدي
+        </div>
+
+        <p>
+            © 2026 جميع الحقوق محفوظة
+        </p>
+
     </footer>
 
+    <!-- FLOAT BTN -->
+
+    <a href="https://wa.me/9647702014853"
+        class="float-whatsapp"
+        target="_blank">
+
+        <i class="fab fa-whatsapp"></i>
+
+    </a>
+
+    <!-- SCRIPT -->
+
     <script>
-        const revealOnScroll = () => {
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(el => {
-                const windowHeight = window.innerHeight;
-                const elementTop = el.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) el.classList.add('active');
-            });
-        };
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll);
+
+        const reveals =
+            document.querySelectorAll(".reveal");
+
+        function revealScroll() {
+
+            for (let i = 0; i < reveals.length; i++) {
+
+                let windowHeight = window.innerHeight;
+
+                let revealTop =
+                    reveals[i].getBoundingClientRect().top;
+
+                let revealPoint = 100;
+
+                if (revealTop < windowHeight - revealPoint) {
+
+                    reveals[i].classList.add("active");
+
+                }
+
+            }
+
+        }
+
+        window.addEventListener("scroll", revealScroll);
+
+        revealScroll();
+
     </script>
+
 </body>
+
 </html>
