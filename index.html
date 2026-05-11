@@ -3,47 +3,62 @@
 
 <head>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>منتجات امين الساعدي للعناية</title>
+    <title>
+        منتجات امين الساعدي للعناية
+    </title>
 
     <!-- FONTS -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Lalezar&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Lalezar&display=swap"
+        rel="stylesheet">
 
     <!-- ICONS -->
 
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
 
         *{
+
             margin:0;
             padding:0;
+
             box-sizing:border-box;
+
             scroll-behavior:smooth;
         }
 
         :root{
 
             --bg:#070b11;
-            --card:rgba(18,23,33,.72);
+
+            --card:
+            rgba(18,23,33,.72);
 
             --gold:#f4c542;
+
             --green:#46d19a;
 
             --text:#b8c0cc;
 
             --gradient-gold:
-            linear-gradient(135deg,#f4c542 0%,#ffe082 100%);
+            linear-gradient(
+            135deg,
+            #f4c542 0%,
+            #ffe082 100%
+            );
 
-            --gradient-green:
-            linear-gradient(135deg,#46d19a 0%,#2ecc71 100%);
         }
 
         body{
@@ -73,13 +88,17 @@
 
             background:
 
-            radial-gradient(circle at top right,
+            radial-gradient(
+            circle at top right,
             rgba(244,197,66,.15),
-            transparent 30%),
+            transparent 30%
+            ),
 
-            radial-gradient(circle at bottom left,
+            radial-gradient(
+            circle at bottom left,
             rgba(70,209,154,.12),
-            transparent 35%);
+            transparent 35%
+            );
 
             z-index:-1;
         }
@@ -93,7 +112,9 @@
             position:relative;
 
             display:flex;
+
             align-items:center;
+
             justify-content:center;
 
             text-align:center;
@@ -129,6 +150,61 @@
             );
         }
 
+        /* COVER IMAGE */
+
+        .hero-cover{
+
+            width:220px;
+
+            height:220px;
+
+            object-fit:cover;
+
+            border-radius:30px;
+
+            position:absolute;
+
+            top:50%;
+            left:50%;
+
+            transform:
+            translate(-50%,-50%);
+
+            z-index:1;
+
+            opacity:.18;
+
+            filter:
+            drop-shadow(
+            0 0 40px
+            rgba(244,197,66,.3)
+            );
+
+            animation:
+            floatCover 5s ease-in-out infinite;
+        }
+
+        @keyframes floatCover{
+
+            0%{
+
+                transform:
+                translate(-50%,-50%);
+            }
+
+            50%{
+
+                transform:
+                translate(-50%,-56%);
+            }
+
+            100%{
+
+                transform:
+                translate(-50%,-50%);
+            }
+        }
+
         .hero-content{
 
             position:relative;
@@ -146,12 +222,15 @@
 
             border-radius:50px;
 
-            background:rgba(255,255,255,.08);
+            background:
+            rgba(255,255,255,.08);
 
             border:
-            1px solid rgba(255,255,255,.1);
+            1px solid
+            rgba(255,255,255,.1);
 
-            backdrop-filter:blur(15px);
+            backdrop-filter:
+            blur(15px);
 
             color:var(--gold);
 
@@ -164,7 +243,8 @@
 
             font-family:'Lalezar',cursive;
 
-            font-size:clamp(3rem,8vw,6rem);
+            font-size:
+            clamp(3rem,8vw,6rem);
 
             line-height:1.2;
 
@@ -179,14 +259,19 @@
             );
 
             -webkit-background-clip:text;
-            -webkit-text-fill-color:transparent;
+
+            -webkit-text-fill-color:
+            transparent;
         }
 
         .hero-subtitle{
 
-            font-size:clamp(1.1rem,3vw,1.6rem);
+            font-size:
+            clamp(1.1rem,3vw,1.5rem);
 
             color:var(--text);
+
+            line-height:2;
 
             margin-bottom:40px;
         }
@@ -217,25 +302,31 @@
 
         .hero-btn.primary{
 
-            background:var(--gradient-gold);
+            background:
+            var(--gradient-gold);
 
             color:#000;
         }
 
         .hero-btn.secondary{
 
-            border:2px solid rgba(255,255,255,.1);
+            border:
+            2px solid
+            rgba(255,255,255,.1);
 
-            background:rgba(255,255,255,.05);
+            background:
+            rgba(255,255,255,.05);
 
             color:#fff;
 
-            backdrop-filter:blur(10px);
+            backdrop-filter:
+            blur(10px);
         }
 
         .hero-btn:hover{
 
-            transform:translateY(-5px);
+            transform:
+            translateY(-5px);
         }
 
         /* CONTAINER */
@@ -257,7 +348,8 @@
 
             font-family:'Lalezar';
 
-            font-size:clamp(2.5rem,6vw,4rem);
+            font-size:
+            clamp(2.5rem,6vw,4rem);
 
             margin-bottom:15px;
         }
@@ -285,8 +377,6 @@
 
         .product-card{
 
-            position:relative;
-
             overflow:hidden;
 
             border-radius:28px;
@@ -294,22 +384,26 @@
             background:var(--card);
 
             border:
-            1px solid rgba(255,255,255,.08);
+            1px solid
+            rgba(255,255,255,.08);
 
-            backdrop-filter:blur(20px);
+            backdrop-filter:
+            blur(20px);
 
             transition:.5s;
         }
 
         .product-card:hover{
 
-            transform:translateY(-15px);
+            transform:
+            translateY(-15px);
 
             border-color:
             rgba(244,197,66,.4);
 
             box-shadow:
-            0 0 40px rgba(244,197,66,.18);
+            0 0 40px
+            rgba(244,197,66,.18);
         }
 
         .product-image{
@@ -374,7 +468,8 @@
 
             border-radius:50px;
 
-            background:var(--gradient-gold);
+            background:
+            var(--gradient-gold);
 
             color:#000;
 
@@ -415,9 +510,11 @@
             background:var(--card);
 
             border:
-            1px solid rgba(255,255,255,.08);
+            1px solid
+            rgba(255,255,255,.08);
 
-            backdrop-filter:blur(20px);
+            backdrop-filter:
+            blur(20px);
         }
 
         .feature-box i{
@@ -459,7 +556,8 @@
             padding:80px 40px;
 
             border:
-            1px solid rgba(255,255,255,.08);
+            1px solid
+            rgba(255,255,255,.08);
         }
 
         .contact h2{
@@ -494,8 +592,6 @@
 
         .contact-btn{
 
-            position:relative;
-
             overflow:hidden;
 
             border-radius:25px;
@@ -512,7 +608,8 @@
             rgba(255,255,255,.05);
 
             border:
-            1px solid rgba(255,255,255,.08);
+            1px solid
+            rgba(255,255,255,.08);
 
             transition:.4s;
         }
@@ -547,10 +644,11 @@
 
         .contact-btn:hover{
 
-            transform:translateY(-10px);
+            transform:
+            translateY(-10px);
         }
 
-        /* HOVER COLORS */
+        /* COLORS */
 
         .whatsapp:hover{
 
@@ -605,7 +703,8 @@
             margin-top:100px;
 
             border-top:
-            1px solid rgba(255,255,255,.08);
+            1px solid
+            rgba(255,255,255,.08);
         }
 
         .footer-logo{
@@ -641,7 +740,9 @@
             border-radius:50%;
 
             display:flex;
+
             align-items:center;
+
             justify-content:center;
 
             text-decoration:none;
@@ -653,9 +754,11 @@
             z-index:999;
 
             box-shadow:
-            0 0 30px rgba(37,211,102,.5);
+            0 0 30px
+            rgba(37,211,102,.5);
 
-            animation:pulse 2s infinite;
+            animation:
+            pulse 2s infinite;
         }
 
         @keyframes pulse{
@@ -679,7 +782,8 @@
 
             opacity:0;
 
-            transform:translateY(80px);
+            transform:
+            translateY(80px);
 
             transition:1s;
         }
@@ -688,26 +792,32 @@
 
             opacity:1;
 
-            transform:translateY(0);
+            transform:
+            translateY(0);
         }
 
         @media(max-width:768px){
 
             .hero-btns{
+
                 flex-direction:column;
             }
 
             .hero-btn{
+
                 width:100%;
             }
 
             .contact{
+
                 padding:60px 25px;
             }
 
             .contact h2{
+
                 font-size:2.5rem;
             }
+
         }
 
     </style>
@@ -723,25 +833,38 @@
         <video autoplay muted loop playsinline>
 
             <source
-                src="https://cdn.coverr.co/videos/coverr-woman-applying-face-cream-1564387966762?download=1080p"
-                type="video/mp4">
+            src="https://cdn.coverr.co/videos/coverr-woman-applying-face-cream-1564387966762?download=1080p"
+            type="video/mp4">
 
         </video>
 
         <div class="hero-overlay"></div>
 
+        <!-- IMAGE -->
+
+        <img src="cover.jpg"
+            class="hero-cover">
+
         <div class="hero-content">
 
             <span class="hero-badge">
+
                 ✨ منتجات فاخرة للعناية
+
             </span>
 
             <h1 class="hero-title">
+
                 منتجات امين الساعدي للعناية
+
             </h1>
 
             <p class="hero-subtitle">
-                الفخامة في كل لمسة • الجودة في كل منتج
+
+                جميع المنتجات يتم نشرها أول بأول داخل قناة التليكرام ✨
+                <br>
+                انضموا للقناة تلكوها بالأسفل 👇
+
             </p>
 
             <div class="hero-btns">
@@ -768,14 +891,19 @@
 
     <!-- PRODUCTS -->
 
-    <div class="container" id="products">
+    <div class="container"
+        id="products">
 
         <h2 class="section-title reveal">
+
             مجموعتنا الفاخرة
+
         </h2>
 
         <p class="section-desc reveal">
+
             منتجات مختارة بعناية لتمنحك أفضل تجربة عناية بالبشرة والشعر
+
         </p>
 
         <div class="products-grid">
@@ -787,7 +915,7 @@
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
+                    src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
 
                 </div>
 
@@ -796,11 +924,15 @@
                     <i class="fas fa-sparkles product-icon"></i>
 
                     <h3 class="product-title">
+
                         عناية بالبشرة
+
                     </h3>
 
                     <p class="product-desc">
+
                         منتجات فاخرة تمنح البشرة النضارة والإشراق الطبيعي مع تركيبات حديثة عالية الجودة.
+
                     </p>
 
                     <a href="#contact"
@@ -821,7 +953,7 @@
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop">
+                    src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop">
 
                 </div>
 
@@ -830,11 +962,15 @@
                     <i class="fas fa-pump-soap product-icon"></i>
 
                     <h3 class="product-title">
+
                         عناية بالشعر
+
                     </h3>
 
                     <p class="product-desc">
+
                         باكجات متطورة تمنح الشعر القوة واللمعان والحيوية بتركيبات احترافية.
+
                     </p>
 
                     <a href="#contact"
@@ -855,7 +991,7 @@
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
+                    src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
 
                 </div>
 
@@ -864,11 +1000,15 @@
                     <i class="fas fa-gem product-icon"></i>
 
                     <h3 class="product-title">
+
                         منتجات فاخرة
+
                     </h3>
 
                     <p class="product-desc">
+
                         عناية متكاملة بلمسة فخمة وجودة عالية تناسب كل تفاصيل الجمال والأناقة.
+
                     </p>
 
                     <a href="#contact"
@@ -893,11 +1033,15 @@
                 <i class="fas fa-truck-fast"></i>
 
                 <h3>
+
                     توصيل سريع
+
                 </h3>
 
                 <p>
+
                     توصيل لجميع المحافظات العراقية بسرعة وأمان.
+
                 </p>
 
             </div>
@@ -907,11 +1051,15 @@
                 <i class="fas fa-shield-heart"></i>
 
                 <h3>
+
                     جودة عالية
+
                 </h3>
 
                 <p>
+
                     منتجات أصلية ومختبرة بعناية لضمان أفضل النتائج.
+
                 </p>
 
             </div>
@@ -921,11 +1069,15 @@
                 <i class="fas fa-star"></i>
 
                 <h3>
+
                     خدمة مميزة
+
                 </h3>
 
                 <p>
+
                     دعم سريع وتجربة شراء احترافية وفخمة.
+
                 </p>
 
             </div>
@@ -934,14 +1086,19 @@
 
         <!-- CONTACT -->
 
-        <div class="contact reveal" id="contact">
+        <div class="contact reveal"
+            id="contact">
 
             <h2>
+
                 تواصل معنا الآن
+
             </h2>
 
             <p>
+
                 متوفرون دائماً للطلبات والاستفسارات
+
             </p>
 
             <div class="contact-grid">
@@ -955,11 +1112,15 @@
                     <i class="fab fa-whatsapp"></i>
 
                     <span class="label">
+
                         واتساب
+
                     </span>
 
                     <span class="info">
+
                         07702014853
+
                     </span>
 
                 </a>
@@ -973,16 +1134,20 @@
                     <i class="fab fa-instagram"></i>
 
                     <span class="label">
+
                         إنستغرام
+
                     </span>
 
                     <span class="info">
+
                         @a9_nj
+
                     </span>
 
                 </a>
 
-                <!-- SNAPCHAT -->
+                <!-- SNAP -->
 
                 <a href="https://www.snapchat.com/add/a9_nj"
                     target="_blank"
@@ -991,11 +1156,15 @@
                     <i class="fab fa-snapchat"></i>
 
                     <span class="label">
+
                         سناب شات
+
                     </span>
 
                     <span class="info">
+
                         a9_nj
+
                     </span>
 
                 </a>
@@ -1009,11 +1178,15 @@
                     <i class="fab fa-telegram"></i>
 
                     <span class="label">
+
                         قناة التليكرام
+
                     </span>
 
                     <span class="info">
+
                         نشر جميع المنتجات • انضم الآن
+
                     </span>
 
                 </a>
@@ -1029,16 +1202,20 @@
     <footer>
 
         <div class="footer-logo">
+
             امين الساعدي
+
         </div>
 
         <p>
+
             © 2026 جميع الحقوق محفوظة
+
         </p>
 
     </footer>
 
-    <!-- FLOAT WHATSAPP -->
+    <!-- FLOAT BUTTON -->
 
     <a href="https://wa.me/9647702014853"
         class="float-whatsapp"
@@ -1057,7 +1234,9 @@
 
         function revealScroll(){
 
-            for(let i = 0; i < reveals.length; i++){
+            for(let i = 0;
+            i < reveals.length;
+            i++){
 
                 let windowHeight =
                 window.innerHeight;
@@ -1068,8 +1247,10 @@
 
                 let revealPoint = 100;
 
-                if(revealTop <
-                windowHeight - revealPoint){
+                if(
+                revealTop <
+                windowHeight - revealPoint
+                ){
 
                     reveals[i]
                     .classList.add("active");
